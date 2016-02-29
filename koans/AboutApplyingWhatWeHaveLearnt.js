@@ -35,36 +35,41 @@ describe("About Applying What We Have Learnt", function() {
     expect(productsICanEat.length).toBe(1);
   });
 
-  // it("given I'm allergic to nuts and hate mushrooms, it should find a pizza I can eat (functional)", function () {
+  it("given I'm allergic to nuts and hate mushrooms, it should find a pizza I can eat (functional)", function () {
 
-  //     var productsICanEat = [];
-  //     var productsNoNuts = products.filter(function(product) {
-  //                                     return product.containsNuts !== true;
-  //                                   });
-  //     var produ = function (ingredients) {
-  //       _ingredients.all()
-  //     }
+      var productsICanEat = [];
+      var productsNoNuts = products.filter(function(product) {
+                                      return product.containsNuts !== true;
+                                    });
+      var produ = function (ingredients) {
+        _ingredients.all()
+      }
 
-  //     function isMushroom(ingredient) {
-  //        var result = ingredient === "mushrooms" ;
-  //        console.log(result);
-  //         return result;
-  //     }
+      function isNotMushroom(ingredient) {
+        return ingredient !== "mushrooms";
+         // var result = ingredient === "mushrooms" ;
+         // console.log(result);
+         //  return result;
+      }
 
-  //     console.log(productsNoNuts);
-  //     console.log(productsNoNuts[0].ingredients);
-  //     console.log("test" + _(productsNoNuts[0].ingredients).all(isMushroom));
-  //     productsICanEat = productsNoNuts.ingredients.filter(function(ingredient) {
-  //       (productsNoNuts).filter(function(product) {
-  //          return _(product.ingredients).all(isMushroom) === false;
-  //       })
-  //     })
+      console.log(productsNoNuts);
+      console.log(productsNoNuts[0].ingredients);
+      console.log("test" + _(productsNoNuts[0].ingredients).all(isNotMushroom));
+      // productsICanEat = productsNoNuts.ingredients.filter(function(ingredient) {
+      //   return ingredient === ''
+      // })
+      productsICanEat = productsNoNuts.filter(function(product) {
+        return _(product.ingredients).all(isNotMushroom);
+      });
+      //   (productsNoNuts).filter(function(product) {
+      //      return _(product.ingredients).all(isMushroom) === false;
+      //   })
 
-  //     console.log(productsICanEat);
-  //     /* solve using filter() & all() / any() */
+      // console.log(productsICanEat);
+      // /* solve using filter() & all() / any() */
 
-  //     expect(productsICanEat.length).toBe(FILL_ME_IN);
-  // });
+      expect(productsICanEat.length).toBe(1);
+  });
 
   /*********************************************************************************/
 
